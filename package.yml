@@ -1,0 +1,43 @@
+name       : itch
+version    : 18.10.1
+release    : 1
+source     :
+    - https://github.com/itchio/itch/archive/v18.10.1.tar.gz : f766bfaa56f4be6c20eaa958f33652778916a0ab2e84185399579772e2480967
+license    : MIT
+component  : games
+summary    : Install and play itch.io games easily
+description: Install and play itch.io games easily
+builddeps  :
+    - pkgconfig(atk)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(pangocairo)
+    - pkgconfig(xcursor)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xdamage)
+    - pkgconfig(xfixes)
+    - pkgconfig(xrandr)
+    - pkgconfig(xrender)
+    - pkgconfig(xtst)
+    - alsa-lib
+    - cups-devel
+    - nodejs
+    - libnss
+    - libxscrnsaver
+rundeps    :
+    - nodejs
+setup      : |
+    npm install -g grunt-cli
+build      : |
+    export CI_BUILD_TAG="v${version}"
+    export CI_CHANNEL="stable"
+    release/ci-compile.js
+    grunt -v "electron:linux-x64"
+install    : |
+    install -dm755 $installdir/usr/bin/
+    install -dm755 $installdir/usr/share/itch/
+    cp -R $workdir/build/v${version}/itch-linux-x64/* $installdir/usr/share/itch/
+    ln -s /usr/share/itch/itch $installdir/usr/bin/itch
+    install -Dm644 $workdir/release/images/itch-icons/icon512.png $installdir/usr/share/pixmaps/itch.png
+    install -Dm644 $pkgfiles/itch.desktop $installdir/usr/share/applications/itch.desktop

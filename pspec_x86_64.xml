@@ -1,0 +1,35 @@
+<PISI>
+    <Source>
+        <Name>itch</Name>
+        <Packager>
+            <Name>Sönke Behrendt</Name>
+            <Email>thesoenke@outlook.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>games</PartOf>
+        <Summary xml:lang="en">Install and play itch.io games easily</Summary>
+        <Description xml:lang="en">Install and play itch.io games easily</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>itch</Name>
+        <Summary xml:lang="en">Install and play itch.io games easily</Summary>
+        <Description xml:lang="en">Install and play itch.io games easily</Description>
+        <PartOf>games</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/applications/itch.desktop</Path>
+            <Path fileType="data">/usr/share/itch</Path>
+            <Path fileType="data">/usr/share/pixmaps/itch.png</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2016-09-24</Date>
+            <Version>18.10.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Sönke Behrendt</Name>
+            <Email>thesoenke@outlook.com</Email>
+        </Update>
+    </History>
+</PISI>
