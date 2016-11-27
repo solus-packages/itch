@@ -1,30 +1,30 @@
 name       : itch
-version    : 18.10.1
-release    : 1
+version    : 20.0.2
+release    : 2
 source     :
-    - https://github.com/itchio/itch/archive/v18.10.1.tar.gz : f766bfaa56f4be6c20eaa958f33652778916a0ab2e84185399579772e2480967
+    - https://github.com/itchio/itch/archive/v20.0.2.tar.gz : 809ee54b2833db7727c5d02012e60804848f21f061ad1c9309087c229bebe1e4
 license    : MIT
 component  : games
 summary    : Install and play itch.io games easily
 description: Install and play itch.io games easily
 builddeps  :
+    - pkgconfig(alsa)
     - pkgconfig(atk)
     - pkgconfig(gconf-2.0)
     - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(gtk+-3.0)
+    - pkgconfig(nss)
     - pkgconfig(pangocairo)
-    - pkgconfig(xcursor)
     - pkgconfig(xcomposite)
+    - pkgconfig(xcursor)
     - pkgconfig(xdamage)
     - pkgconfig(xfixes)
     - pkgconfig(xrandr)
     - pkgconfig(xrender)
+    - pkgconfig(xscrnsaver)
     - pkgconfig(xtst)
-    - alsa-lib
     - cups-devel
     - nodejs
-    - libnss
-    - libxscrnsaver
 rundeps    :
     - nodejs
 setup      : |
@@ -37,7 +37,7 @@ build      : |
 install    : |
     install -dm755 $installdir/usr/bin/
     install -dm755 $installdir/usr/share/itch/
-    cp -R $workdir/build/v${version}/itch-linux-x64/* $installdir/usr/share/itch/
+    cp -r $workdir/build/v${version}/itch-linux-x64/* $installdir/usr/share/itch/
     ln -s /usr/share/itch/itch $installdir/usr/bin/itch
     install -Dm644 $workdir/release/images/itch-icons/icon512.png $installdir/usr/share/pixmaps/itch.png
     install -Dm644 $pkgfiles/itch.desktop $installdir/usr/share/applications/itch.desktop
