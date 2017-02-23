@@ -1,6 +1,6 @@
 name       : itch
 version    : 23.2.1
-release    : 3
+release    : 4
 source     :
     - https://github.com/itchio/itch/archive/v23.2.1.tar.gz : 30aef4b14edb0291c45f024cbaea99dc6e86ede10ca3f2c8acfaf66aa6d84d19
 license    : MIT
@@ -26,6 +26,7 @@ builddeps  :
     - pkgconfig(xtst)
     - cups-devel
     - nodejs
+    - unzip
 rundeps    :
     - nodejs
 setup      : |
@@ -35,6 +36,7 @@ build      : |
     export CI_BUILD_TAG="v${version}"
     export CI_CHANNEL="stable"
     release/ci-compile.js
+    sed -i 's|https://github.com/electron/electron/releases/download/v|https://solus-project.com/sources/electron/v|g' node_modules/electron-download/index.js
     grunt -v "electron:linux-x64"
 install    : |
     install -dm755 $installdir/usr/bin/

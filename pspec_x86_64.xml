@@ -24,7 +24,7 @@
         </Files>
     </Package>
     <History>
-        <Update release="3">
+        <Update release="4">
             <Date>2017-02-23</Date>
             <Version>23.2.1</Version>
             <Comment>Packaging update</Comment>
