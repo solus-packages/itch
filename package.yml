@@ -1,10 +1,11 @@
 name       : itch
-version    : 20.0.2
-release    : 2
+version    : 23.2.1
+release    : 3
 source     :
-    - https://github.com/itchio/itch/archive/v20.0.2.tar.gz : 809ee54b2833db7727c5d02012e60804848f21f061ad1c9309087c229bebe1e4
+    - https://github.com/itchio/itch/archive/v23.2.1.tar.gz : 30aef4b14edb0291c45f024cbaea99dc6e86ede10ca3f2c8acfaf66aa6d84d19
 license    : MIT
 component  : games
+networking : yes
 summary    : Install and play itch.io games easily
 description: Install and play itch.io games easily
 builddeps  :
@@ -28,8 +29,9 @@ builddeps  :
 rundeps    :
     - nodejs
 setup      : |
-    npm install -g grunt-cli
+    npm install grunt-cli
 build      : |
+    export PATH=$PATH:$workdir/node_modules/grunt/bin/
     export CI_BUILD_TAG="v${version}"
     export CI_CHANNEL="stable"
     release/ci-compile.js
