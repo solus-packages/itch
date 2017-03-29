@@ -1,8 +1,8 @@
 name       : itch
-version    : 23.2.1
-release    : 4
+version    : 23.4.0
+release    : 5
 source     :
-    - https://github.com/itchio/itch/archive/v23.2.1.tar.gz : 30aef4b14edb0291c45f024cbaea99dc6e86ede10ca3f2c8acfaf66aa6d84d19
+    - https://github.com/itchio/itch/archive/v23.4.0.tar.gz : 09112435db159fdbe1840f11c776a9c641fd93988ff41a8d8edc1eb2bcb182db
 license    : MIT
 component  : games
 networking : yes
