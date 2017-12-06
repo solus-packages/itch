@@ -2,34 +2,45 @@
     <Source>
         <Name>itch</Name>
         <Packager>
-            <Name>Ikey Doherty</Name>
-            <Email>ikey@solus-project.com</Email>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
         </Packager>
         <License>MIT</License>
         <PartOf>games</PartOf>
         <Summary xml:lang="en">Install and play itch.io games easily</Summary>
-        <Description xml:lang="en">Install and play itch.io games easily</Description>
+        <Description xml:lang="en">The goal of this project is to give you a desktop application that you can download and run games from itch.io with. Additionally you should be able to update games and get notified when games are updated. The goal is not to replace the itch.io website.
+</Description>
         <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>itch</Name>
         <Summary xml:lang="en">Install and play itch.io games easily</Summary>
-        <Description xml:lang="en">Install and play itch.io games easily</Description>
+        <Description xml:lang="en">The goal of this project is to give you a desktop application that you can download and run games from itch.io with. Additionally you should be able to update games and get notified when games are updated. The goal is not to replace the itch.io website.
+</Description>
         <PartOf>games</PartOf>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
             <Path fileType="data">/usr/share/applications/itch.desktop</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/128x128/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/16x16/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/256x256/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/32x32/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/36x36/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/48x48/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/512x512/apps/itch.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/64x64/apps/itch.png</Path>
             <Path fileType="data">/usr/share/itch</Path>
-            <Path fileType="data">/usr/share/pixmaps/itch.png</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/metainfo/itch.appdata.xml</Path>
         </Files>
     </Package>
     <History>
-        <Update release="6">
+        <Update release="7">
             <Date>2017-12-06</Date>
             <Version>23.6.0</Version>
             <Comment>Packaging update</Comment>
-            <Name>Ikey Doherty</Name>
-            <Email>ikey@solus-project.com</Email>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
         </Update>
     </History>
 </PISI>

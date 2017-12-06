@@ -1,47 +1,57 @@
 name       : itch
 version    : 23.6.0
-release    : 6
+release    : 7
 source     :
     - https://github.com/itchio/itch/archive/v23.6.0.tar.gz : ac986888a8068177c3bc15c2dbf2edb654c74e1dd0472606b1f19d23289de16e
 license    : MIT
 component  : games
-networking : yes
 summary    : Install and play itch.io games easily
-description: Install and play itch.io games easily
+description: |
+    The goal of this project is to give you a desktop application that you can download and run games from itch.io with. Additionally you should be able to update games and get notified when games are updated. The goal is not to replace the itch.io website.
+networking : yes
 builddeps  :
     - pkgconfig(alsa)
-    - pkgconfig(atk)
+    - pkgconfig(fontconfig)
     - pkgconfig(gconf-2.0)
-    - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(gtk+-2.0)
-    - pkgconfig(gtk+-3.0)
-    - pkgconfig(nss)
-    - pkgconfig(pangocairo)
-    - pkgconfig(xcomposite)
-    - pkgconfig(xcursor)
-    - pkgconfig(xdamage)
-    - pkgconfig(xfixes)
-    - pkgconfig(xrandr)
-    - pkgconfig(xrender)
+    - pkgconfig(xi)
     - pkgconfig(xscrnsaver)
     - pkgconfig(xtst)
     - cups-devel
     - nodejs
-    - unzip
-rundeps    :
-    - nodejs
 setup      : |
+    npm config set unsafe-perm=true
     npm install grunt-cli
 build      : |
     export PATH=$PATH:$workdir/node_modules/grunt/bin/
+
     export CI_BUILD_TAG="v${version}"
     export CI_CHANNEL="stable"
+
     release/ci-compile.js
-    grunt -v "electron:linux-x64"
+    release/ci-generate-linux-extras.js
+
+    grunt -v electron:linux-x64
 install    : |
-    install -dm755 $installdir/usr/bin/
-    install -dm755 $installdir/usr/share/itch/
+    # Copy to our destination
+    install -dm00755 $installdir/usr/share/itch/
     cp -r $workdir/build/v${version}/itch-linux-x64/* $installdir/usr/share/itch/
-    ln -s /usr/share/itch/itch $installdir/usr/bin/itch
-    install -Dm644 $workdir/release/images/itch-icons/icon512.png $installdir/usr/share/pixmaps/itch.png
-    install -Dm644 $pkgfiles/itch.desktop $installdir/usr/share/applications/itch.desktop
+
+    # Install binary to $PATH
+    install -dm00755 $installdir/usr/bin/
+    ln -sv /usr/share/itch/itch $installdir/usr/bin/itch
+
+    # Install icons
+    for size in 16 32 36 48 64 128 256 512; do
+    install -Dm00644 release/images/itch-icons/icon$size.png \
+      $installdir/usr/share/icons/hicolor/${size}x${size}/apps/itch.png
+    done
+
+    # Install desktop file
+    install -Dm00644 linux-extras/io.itch.itch.desktop $installdir/usr/share/applications/itch.desktop
+
+    # Install appstream data
+    install -Dm00644 linux-extras/itch.appdata.xml $installdir/usr/share/metainfo/itch.appdata.xml
+
+    # Install man page
+    install -Dm00644 linux-extras/itch.6 $installdir/usr/share/man/man6/itch.6
