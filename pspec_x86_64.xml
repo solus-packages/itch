@@ -2,8 +2,8 @@
     <Source>
         <Name>itch</Name>
         <Packager>
-            <Name>Joey Riches</Name>
-            <Email>josephriches@gmail.com</Email>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
         </Packager>
         <License>MIT</License>
         <PartOf>games</PartOf>
@@ -19,7 +19,7 @@
 </Description>
         <PartOf>games</PartOf>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/bin/itch</Path>
             <Path fileType="data">/usr/share/applications/itch.desktop</Path>
             <Path fileType="data">/usr/share/icons/hicolor/128x128/apps/itch.png</Path>
             <Path fileType="data">/usr/share/icons/hicolor/16x16/apps/itch.png</Path>
@@ -29,18 +29,88 @@
             <Path fileType="data">/usr/share/icons/hicolor/48x48/apps/itch.png</Path>
             <Path fileType="data">/usr/share/icons/hicolor/512x512/apps/itch.png</Path>
             <Path fileType="data">/usr/share/icons/hicolor/64x64/apps/itch.png</Path>
-            <Path fileType="data">/usr/share/itch</Path>
-            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/itch/LICENSE</Path>
+            <Path fileType="data">/usr/share/itch/LICENSES.chromium.html</Path>
+            <Path fileType="data">/usr/share/itch/blink_image_resources_200_percent.pak</Path>
+            <Path fileType="data">/usr/share/itch/content_resources_200_percent.pak</Path>
+            <Path fileType="data">/usr/share/itch/content_shell.pak</Path>
+            <Path fileType="data">/usr/share/itch/icudtl.dat</Path>
+            <Path fileType="data">/usr/share/itch/itch</Path>
+            <Path fileType="data">/usr/share/itch/libffmpeg.so</Path>
+            <Path fileType="data">/usr/share/itch/libnode.so</Path>
+            <Path fileType="data">/usr/share/itch/locales/am.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ar.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/bg.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/bn.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ca.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/cs.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/da.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/de.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/el.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/en-GB.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/en-US.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/es-419.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/es.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/et.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/fa.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/fake-bidi.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/fi.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/fil.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/fr.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/gu.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/he.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/hi.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/hr.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/hu.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/id.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/it.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ja.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/kn.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ko.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/lt.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/lv.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ml.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/mr.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ms.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/nb.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/nl.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/pl.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/pt-BR.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/pt-PT.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ro.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ru.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/sk.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/sl.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/sr.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/sv.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/sw.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/ta.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/te.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/th.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/tr.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/uk.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/vi.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/zh-CN.pak</Path>
+            <Path fileType="data">/usr/share/itch/locales/zh-TW.pak</Path>
+            <Path fileType="data">/usr/share/itch/natives_blob.bin</Path>
+            <Path fileType="data">/usr/share/itch/pdf_viewer_resources.pak</Path>
+            <Path fileType="data">/usr/share/itch/resources/app.asar</Path>
+            <Path fileType="data">/usr/share/itch/resources/electron.asar</Path>
+            <Path fileType="data">/usr/share/itch/snapshot_blob.bin</Path>
+            <Path fileType="data">/usr/share/itch/ui_resources_200_percent.pak</Path>
+            <Path fileType="data">/usr/share/itch/version</Path>
+            <Path fileType="data">/usr/share/itch/views_resources_200_percent.pak</Path>
+            <Path fileType="man">/usr/share/man/man6/itch.6</Path>
             <Path fileType="data">/usr/share/metainfo/itch.appdata.xml</Path>
         </Files>
     </Package>
     <History>
-        <Update release="7">
-            <Date>2017-12-06</Date>
-            <Version>23.6.0</Version>
+        <Update release="8">
+            <Date>2018-08-04</Date>
+            <Version>23.6.3</Version>
             <Comment>Packaging update</Comment>
-            <Name>Joey Riches</Name>
-            <Email>josephriches@gmail.com</Email>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
         </Update>
     </History>
 </PISI>

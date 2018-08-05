@@ -1,8 +1,8 @@
 name       : itch
-version    : 23.6.0
-release    : 7
+version    : 23.6.3
+release    : 8
 source     :
-    - https://github.com/itchio/itch/archive/v23.6.0.tar.gz : ac986888a8068177c3bc15c2dbf2edb654c74e1dd0472606b1f19d23289de16e
+    - https://github.com/itchio/itch/archive/v23.6.3.tar.gz : e05589a2f5b618aa45b8ca4f7a77a22647694ee32810a99781d418b196a0810f
 license    : MIT
 component  : games
 summary    : Install and play itch.io games easily
